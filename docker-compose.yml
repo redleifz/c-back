@@ -21,10 +21,16 @@ services:
       - "8000:8000"
     environment:
       DB_HOST: mysql
-      DB_PORT: 3307
+      DB_PORT: 3306
       DB_USERNAME: user
       DB_PASSWORD: userpass
       DB_DATABASE: cliniter
     depends_on:
       - mysql
+    restart: always
+
+  adminer:
+    image: adminer
+    ports:
+      - "8080:8080"
     restart: always
